@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List</title>
+  </head>
+ <body>
+    
+
+   <div id="parentDiv">
+     <!--<div class="inputBtn">-->
+     <button onclick="Add()" id="Add">Add-Items</button>
+</div>
+
+
+  <script>
+function Add(){
+     //for create a container
+    const  inputContainer =document.createElement("div");
+    inputContainer.id = "container";
+    inputContainer.innerText = "Add";
+    inputContainer.style.backgroundColor ="purple";
+    
+    //for create a container in which we putup my input and delete btn
+    const wrapperDiv = document.createElement("div");
+    wrapperDiv.id = "wrapperDiv";
+       
+//for create input box
+    const inputBtn = document.createElement("input");
+    inputBtn.id = "inputBtn";
+    inputBtn.placeholder = "enter your element";
+    inputBtn.type = "text";
+
+//for create delete button
+    const deleteBtn = document.createElement("button");
+    deleteBtn.id = "delete";
+    deleteBtn.style.backgroundColor = "green";
+    deleteBtn.onclick = function(){
+        wrapperDiv.remove();
+    };
+    wrapperDiv.appendChild(inputBtn);
+     wrapperDiv.appendChild(deleteBtn);
+  
+    deleteBtn.innerText = "delete";
+    document.getElementById("parentDiv").appendChild(wrapperDiv);
+}
+
+
+</script>
+</body>
+</html>

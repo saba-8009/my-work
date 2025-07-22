@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Create Input + Delete</title>
+  <style>
+    .inputWrapper {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+    }
+
+    .inputWrapper input {
+      padding: 8px;
+      font-size: 16px;
+    }
+
+    .inputWrapper button {
+      margin-left: 10px;
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="parentDiv">
+    <button id="addBtn">Add Input</button>
+  </div>
+
+  <script>
+    document.getElementById("addBtn").onclick = function () {
+      // Step 1: Create wrapper div
+      const inputWrapper = document.createElement("div");
+      inputWrapper.className = "inputWrapper";
+
+      // Step 2: Create input
+      const input = document.createElement("input");
+      input.type = "text";
+      input.placeholder = "Enter item";
+
+      // Step 3: Create delete button
+      const deleteBtn = document.createElement("button");
+      deleteBtn.innerText = "Delete";
+
+      // Step 4: Delete logic
+      deleteBtn.onclick = function () {
+        inputWrapper.remove(); // removes the whole input + button
+      };
+
+      // Step 5: Append input and button to wrapper
+      inputWrapper.appendChild(input);
+      inputWrapper.appendChild(deleteBtn);
+
+      // Step 6: Add wrapper to the parentDiv
+      document.getElementById("parentDiv").appendChild(inputWrapper);
+    };
+  </script>
+
+</body>
+</html>

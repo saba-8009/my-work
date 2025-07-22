@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  src="practice.js" defer></script>
+    <style>
+        .inputBtn {
+            height: 100px;
+            width: 300px;
+            background-color: purple;
+            position: relative;
+        }
+        .input-btn input{
+            margin-top:20px ;
+        }
+        #Add{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+   <h1 class="heading-H-one">javascript Practice</h1> 
+   <h2 id="myName">saba parveen</h2>
+   <button onclick="submitButton()">submit here</button>
+   <div id="parentDiv">
+     <!--<div class="inputBtn">-->
+     <button onclick="Add()" id="Add">Add-Items</button>
+     <!--
+     <div id="inputContainer">  
+    <input type="text" placeholder="enter your items" id="inputPlace">
+    <button onclick="Delete()">Delete</button>
+</div>
+</div>-->
+</div>
+   <h1 id="title">Hello</h1>
+<script>
+    const  content = document.getElementById("myName");
+    function submitButton(){
+    //alert("i'm Popupbox");
+     myName.textContent = "I'm from united university";
+    }
+
+/*
+function Delete(){
+    //alert("i wnat to remove input box");
+    const inputPlace = document.getElementById("inputContainer");
+   inputPlace.remove();
+
+}
+
+*/
+
+function add(){
+    if(!document.getElementById("container")){ //for create a container
+    const  inputContainer =document.createElement("div");
+    inputContainer.id = "container";
+    inputContainer.innerText = "Add";
+    inputContainer.style.backgroundColor ="purple";
+    inputContainer.onclick = add;
+    
+       
+//for create input box
+    const inputBtn = document.createElement("input");
+    inputBtn.id = "inputBtn";
+    inputBtn.placeholder = "enter your element";
+    inputBtn.type = "text";
+
+//for create delete button
+    const deleteBtn = document.createElement("button");
+    deleteBtn.id = "delete";
+    deleteBtn.style.backgroundColor = "green";
+    deleteBtn.onclick = function(){
+        document.getElementById("delete").remove();
+    };
+    deleteBtn.innerText = "delete";
+    document.getElementById("parentDiv").appendChild(container);
+}
+}
+
+</script>
+</body>
+</html>

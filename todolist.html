@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        .to-do-list{
+            height: auto;
+            margin-top: 30px;
+            width: 50%;
+            margin-left: 300px;
+            background-color: rgb(100, 8, 100);
+            position: absolute;
+            border-radius: 30px;
+            box-shadow:  0 0 10px black;
+        }
+        .to-do-list h1{
+            color: white;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 50px;
+        }
+        .output-cont{
+            height: 60px;
+            width: 400px;
+            margin-left: 160px;
+            background-color: rgb(155, 41, 155);
+            position: relative;
+        }
+        .to-do-list input{
+            margin-left: 20px;
+            margin-top: 13px;
+            padding: 10px 20px 10px;
+            border-radius: 20px;
+              border: none;
+            outline: none;
+            font-size: 15px;
+        }
+        .to-do-list button{
+            padding: 10px 20px 10px; 
+            background-color:rgb(187, 118, 178);
+            background-color: green;
+            font-size: 15px;
+            border: none;
+            outline: none;
+        }
+        .items-container{
+            height: 30px;
+            width: 300px;
+            margin-left: 210px;
+            
+            position: absolute;
+           background-color:rgb(165, 87, 153);
+           margin-top: 10px;
+        }
+        .items-container li{
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            margin-left: 20px;
+        }
+        @media screen( max-width:) {
+            
+        }
+        #wrapperDiv{
+            margin-left: 160px;
+            margin-top: 20px;
+            height: 60px;
+            width:400px;
+            background-color: purple
+        }
+        #wrapperDiv button{
+            background-color: rgb(219, 47, 85);
+        }
+        #wrapperDiv input{
+            border-radius: 5px;
+            background-color: rgb(248, 248, 250);
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <div class="to-do-list">
+              <h1> TO DO LIST</h1>
+              <div class="output-cont">
+                <input type="text" placeholder="Enter your items" class="input-box">
+                <button onclick="additems()">ADD-ITEMS</button>
+              </div>
+              <div id="parentDiv">
+                
+                
+              </div>
+        </div>
+    </div>
+    <script>
+       function additems(){
+        //for create a container
+      const wrapperDiv = document.createElement("div");
+       wrapperDiv.id = "wrapperDiv";
+
+       //create a label box
+       const inputBox =  document.createElement("input");
+         inputBox .id = "label";
+           const userInput = document.querySelector(".input-box").value.trim();
+            // Check input is empty or not
+  if (userInput === "") {
+    alert("Please enter a task!");
+    return; // stop the function here
+  }
+       
+       // for create a deletebtn
+       const deleteBtn = document.createElement("button");
+       deleteBtn.id = "delteBtn";
+       deleteBtn.innerText = "Delete";
+       deleteBtn.onclick = function(){
+wrapperDiv.remove();
+       };
+    //for wrapper both label and delete btn in one div
+    wrapperDiv.appendChild(inputBox );
+    wrapperDiv.appendChild(deleteBtn);
+
+  
+    document.getElementById("parentDiv").appendChild(wrapperDiv);
+      // clear main input
+  document.querySelector(".input-box").value = "";
+
+     }
+    </script>
+</body>
+</html>
