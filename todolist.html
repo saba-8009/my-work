@@ -104,12 +104,14 @@
        //create a label box
        const inputBox =  document.createElement("input");
          inputBox .id = "label";
+         
            const userInput = document.querySelector(".input-box").value.trim();
             // Check input is empty or not
   if (userInput === "") {
     alert("Please enter a task!");
     return; // stop the function here
   }
+  inputBox.value = userInput; 
        
        // for create a deletebtn
        const deleteBtn = document.createElement("button");
